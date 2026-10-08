@@ -1,0 +1,8 @@
+description <https://example.com/sierra-example/items#> as items {
+    uses <https://www.modelware.io/sierra/base#> as base
+
+    instance power_on : base:Item [ base:description "Power-on signal." ]
+    instance start : base:Item [ base:description "Start command." ]
+    instance stop : base:Item [ base:description "Stop command." ]
+    instance power_off : base:Item [ base:description "Power-off signal." ]
+}

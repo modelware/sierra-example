@@ -1,0 +1,22 @@
+description <https://example.com/sierra-example/concerns#> as concerns {
+    uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+    uses <https://www.modelware.io/sierra/stakeholder#> as stakeholder
+    uses <https://www.modelware.io/sierra/base#> as base
+    extends <https://example.com/sierra-example/stakeholders#> as stakeholders
+
+    @rdfs:label "Ease of Use"
+    instance EaseOfUse : stakeholder:Concern [
+        base:description "Starting and stopping the device takes one action."
+        base:category "Need"
+        base:priority "High"
+        stakeholder:isExpressedBy stakeholders:Operator
+    ]
+
+    @rdfs:label "Reliability"
+    instance Reliability : stakeholder:Concern [
+        base:description "The device recovers to Idle after every run."
+        base:category "Need"
+        base:priority "Medium"
+        stakeholder:isExpressedBy stakeholders:Maintainer
+    ]
+}

@@ -1,0 +1,17 @@
+description <https://example.com/sierra-example/stakeholders#> as stakeholders {
+    uses <http://www.w3.org/2000/01/rdf-schema#> as rdfs
+    uses <https://www.modelware.io/sierra/stakeholder#> as stakeholder
+    uses <https://www.modelware.io/sierra/base#> as base
+
+    @rdfs:label "Operator"
+    instance Operator : stakeholder:Stakeholder [
+        base:description "Runs the device day to day."
+        base:category "User"
+    ]
+
+    @rdfs:label "Maintainer"
+    instance Maintainer : stakeholder:Stakeholder [
+        base:description "Keeps the device in working order."
+        base:category "Support"
+    ]
+}

@@ -1,0 +1,8 @@
+description bundle <https://example.com/sierra-example/bundle#> as d-bundle {
+    uses <https://www.modelware.io/sierra/bundle#>
+    includes <https://example.com/sierra-example/stakeholders#>
+    includes <https://example.com/sierra-example/concerns#>
+    includes <https://example.com/sierra-example/entities#>
+    includes <https://example.com/sierra-example/items#>
+    includes <https://example.com/sierra-example/statemachine#>
+}

@@ -1,0 +1,15 @@
+oml-code:
+  schemaVersion: 1
+
+project:
+  name: "@modelware/sierra-example"
+  version: 0.1.0
+  description: "A small example project built with the packaged Sierra method"
+
+sources: [src]
+
+dependencies:
+  "@modelware/sierra-method": "^0.1.0"
+
+defaults:
+  render: -m src/md -b build/web -c src/oml/example.com/sierra-example/bundle.oml

@@ -1,0 +1,17 @@
+description <https://example.com/sierra-example/codegen#> as configs {
+    uses <http://opencaesar.io/codegen#> as codegen
+    extends <https://www.modelware.io/sierra/codegen/conops#> as conops
+    extends <https://www.modelware.io/sierra/codegen/statemachine#> as statemachine
+
+    instance conops : codegen:Config [
+        codegen:spec conops:ConOpsSpec
+        codegen:context "https://example.com/sierra-example/bundle"
+        codegen:binding [ codegen:key "path" codegen:value "build/docs" ]
+    ]
+
+    instance device : codegen:Config [
+        codegen:spec statemachine:StateMachineSpec
+        codegen:context "https://example.com/sierra-example/statemachine"
+        codegen:binding [ codegen:key "path" codegen:value "build/docs" ]
+    ]
+}

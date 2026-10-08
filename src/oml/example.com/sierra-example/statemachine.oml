@@ -1,0 +1,37 @@
+description <https://example.com/sierra-example/statemachine#> as statemachine {
+    uses <https://www.modelware.io/sierra/state#> as state
+    uses <https://www.modelware.io/sierra/base#> as base
+    extends <https://example.com/sierra-example/items#> as items
+    extends <https://example.com/sierra-example/entities#> as entities
+
+    instance Device : state:StateMachine [
+        base:description "Operating modes of a simple device."
+        state:isAllocatedTo entities:Controller
+    ]
+
+    instance Off : state:Initial [ base:isContainedBy Device ]
+    instance Idle : state:State [ base:isContainedBy Device ]
+    instance Running : state:State [ base:isContainedBy Device ]
+    instance Done : state:Final [ base:isContainedBy Device ]
+
+    relation instance T_power_on : state:Transition [
+        from Off
+        to Idle
+        state:isTriggeredBy items:power_on
+    ]
+    relation instance T_start : state:Transition [
+        from Idle
+        to Running
+        state:isTriggeredBy items:start
+    ]
+    relation instance T_stop : state:Transition [
+        from Running
+        to Idle
+        state:isTriggeredBy items:stop
+    ]
+    relation instance T_power_off : state:Transition [
+        from Idle
+        to Done
+        state:isTriggeredBy items:power_off
+    ]
+}

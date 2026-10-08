@@ -1,0 +1,14 @@
+description <https://example.com/sierra-example/entities#> as entities {
+    uses <https://www.modelware.io/sierra/entity#> as ^entity
+    uses <https://www.modelware.io/sierra/mission#> as mission
+    uses <https://www.modelware.io/sierra/base#> as base
+
+    instance Controller : entity:Entity [
+        base:description "The device's control unit."
+    ]
+
+    instance OperateDevice : mission:Capability [
+        base:description "Start, run and stop the device."
+        entity:isAssignedTo Controller
+    ]
+}
